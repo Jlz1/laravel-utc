@@ -8,7 +8,10 @@ Route::get('/', function () {
 });
 
 
-# 1. Simple Routing
+# --------------- 0. Redirect ---------------
+Route::redirect('/contact-us', 'hubungi-kami');
+
+# --------------- 1. Simple Routing ---------------
 Route::get('/login', function (){
     return view('auth.login');
 })->name('view.login');
@@ -17,17 +20,7 @@ Route::get('/register', function (){
     return view('auth.register');
 })->name('view.register');
 
-# 2. Controller routing
+# --------------- 2. Controller Routing ---------------
 Route::get('/home', [HomeController::class, 'index'])->name('view.home');
-
-
-
-
-
-
-
-
-
-
 
 
