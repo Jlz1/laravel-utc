@@ -2,4 +2,4 @@
     Register
 </h1>
 
-<a href="{{route('view.login')}}">To Login</a>
+<a href="{{route('view.login')}}">To login</a>
