@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\StocksModel;
 
 class StocksController extends Controller
 {
@@ -11,7 +12,9 @@ class StocksController extends Controller
     }
 
     public function portofolio(){
-        return view('stocks.portofolio');
+        $stocks = StocksModel::get();
+
+        return view('stocks.portofolio', compact('stocks'));
     }
 
     public function orders(){
