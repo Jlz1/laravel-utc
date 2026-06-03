@@ -17,6 +17,12 @@ class StocksController extends Controller
         return view('stocks.portofolio', compact('stocks'));
     }
 
+    public function detail($ticker){
+        $stock = StocksModel::findTicker($ticker);
+
+        return view('stocks.detail', compact('stock'));       
+    }
+
     public function orders(){
         return view('stocks.orders');
     }

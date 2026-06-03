@@ -18,7 +18,7 @@
                     @foreach ($stocks as $stock)
                         <tr class="table-secondary">
                             <td>{{$stock['id']}}</td>
-                            <td>{{$stock['ticker']}}</td>
+                            <td><a href="{{route('stocks.detail', $stock['ticker'])}}">{{$stock['ticker']}}</a></td>
                             <td>{{$stock['average']}}</td>
                         </tr>
                     @endforeach
