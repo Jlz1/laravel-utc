@@ -26,4 +26,8 @@ class StocksController extends Controller
     public function orders(){
         return view('stocks.orders');
     }
+
+    public function buy(Request $request){
+        dd($request->all());
+    }
 }
