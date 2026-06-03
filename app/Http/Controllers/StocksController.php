@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\StocksModel;
+use App\Models\Stock;
 
 class StocksController extends Controller
 {
@@ -12,13 +12,17 @@ class StocksController extends Controller
     }
 
     public function portofolio(){
-        $stocks = StocksModel::get();
+        $stocks = Stock::all();
 
         return view('stocks.portofolio', compact('stocks'));
     }
 
     public function detail($ticker){
-        $stock = StocksModel::findTicker($ticker);
+        $stock = Stock::where('ticker', $ticker)->first();
+
+        if(!$stock){
+            abort(404);
+        }
 
         return view('stocks.detail', compact('stock'));       
     }
