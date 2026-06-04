@@ -34,4 +34,5 @@ Route::prefix('stocks')->name('stocks.')->group(function(){
     Route::get('/orders', [StocksController::class, 'orders'])->name('orders');
     Route::get('/{ticker}', [StocksController::class, 'detail'])->name('detail');
     Route::post('/orders', [StocksController::class, 'buy'])->name('store');
+    Route::get('/history', [StocksController::class, 'history'])->name('history');
 });

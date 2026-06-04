@@ -32,10 +32,17 @@ class StocksController extends Controller
     }
 
     public function buy(Request $request){
-        Stock::create([
+        $stock = Stock::create([
             'ticker' => $request->ticker,
             'average' => $request->average,
             'price' => $request->average * 1.5
         ]);
+
+        $stock->transaction()->create([
+            'average' => $request->average,
+            'price' => $request->average,
+        ]);
+
+        return redirect()->route('stocks.portofolio');
     }
 }
