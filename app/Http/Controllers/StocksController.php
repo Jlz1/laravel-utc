@@ -32,6 +32,10 @@ class StocksController extends Controller
     }
 
     public function buy(Request $request){
-        dd($request->all());
+        Stock::create([
+            'ticker' => $request->ticker,
+            'average' => $request->average,
+            'price' => $request->average * 1.5
+        ]);
     }
 }

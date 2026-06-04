@@ -18,7 +18,7 @@
 
                     <div class="col-md-4">
                         <label>Price</label>
-                        <input type="text" name="price" placeholder="Input price">
+                        <input type="text" name="average" placeholder="Input price">
                     </div>
 
                     <button type="submit" class="btn btn-primary">Submit</button>
